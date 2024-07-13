@@ -11,7 +11,7 @@ func twoSum(nums []int, target int) []int {
 	hash := map[int]int{} // Хэш таблица, в которой хранятся числа и индесы
 
 	for i, num := range nums {
-		if j, inMap := hash[target-num]; inMap {
+		if j, inMap := hash[target-num]; inMap { // проверяем есть ли в хэше число, при сложении с которым текущее даст нужный результат
 			result = []int{i, j}
 			break
 		} else {
