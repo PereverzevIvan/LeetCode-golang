@@ -8,19 +8,14 @@ import (
 
 // https://leetcode.com/problems/group-anagrams/description/
 
-func isAnagram(s string, t string) bool {
-	ss := sortCharsInString(s)
-	st := sortCharsInString(t)
-
-	return ss == st
-}
-
+// Функция для сортировки знаков внутри строки
 func sortCharsInString(s string) string {
 	ss := strings.Split(s, "")
 	sort.Strings(ss)
 	return strings.Join(ss, "")
 }
 
+// Функция для группировки анаграм в любом порядке
 func groupAnagrams(strs []string) [][]string {
 	var result [][]string
 	hash := map[string][]string{}
