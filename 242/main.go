@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 // https://leetcode.com/problems/valid-anagram/description/
 func isAnagram(s string, t string) bool {
@@ -25,6 +29,16 @@ func isAnagram(s string, t string) bool {
 		}
 	}
 	return true
+}
+
+func isAnagram2(s string, t string) bool {
+	ss := strings.Split(s, "")
+	st := strings.Split(t, "")
+
+	sort.Strings(ss)
+	sort.Strings(st)
+
+	return strings.Join(ss, "") == strings.Join(st, "")
 }
 
 func main() {
